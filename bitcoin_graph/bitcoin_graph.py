@@ -100,3 +100,9 @@ def bitcoin_data_export(graph_data, type, filename):
         dataframe.to_csv(f'data/{filename}.csv')
     else:
         'Please enter one of the following options: edgelist; graphml; adjacencylist, adjacencymatrix.'
+
+
+if __name__ == "__main__":
+    """ This is executed when run from the command line """
+    #main()
+    print('This is currently in an importable state only and is not intended for direct use')
