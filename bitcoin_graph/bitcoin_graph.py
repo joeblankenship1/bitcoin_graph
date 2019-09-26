@@ -13,6 +13,9 @@ from datetime import datetime
 import network as nx
 from blockchain import blockexplorer as bce
 
+# TODO: build feature for offline import for data - need data format standards from JSON
+# TODO: type hints for each method
+# TODO: link to tests for lib - expected outputs
 
 def timestamp_conv(time_stamp):
     """
@@ -101,7 +104,7 @@ def bitcoin_data_export(graph_data, type, filename):
     else:
         'Please enter one of the following options: edgelist; graphml; adjacencylist, adjacencymatrix.'
 
-
+# TODO: link to main() once CLI features complete
 if __name__ == "__main__":
     """ This is executed when run from the command line """
     #main()
