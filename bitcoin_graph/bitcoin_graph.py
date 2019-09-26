@@ -54,6 +54,7 @@ def bitcoin_data(address):
                                                 ]))
     return transaction_pairs
 
+
 def bitcoin_network(node_data):
     """
     Iterate over node addresses
@@ -68,3 +69,13 @@ def bitcoin_network(node_data):
         for j in i:
             network_data_combine.append(j)
     return network_data_combine
+
+
+def bitcoin_graph(node_data, edge_data):
+    """
+    Generate graph object of bitcoin transactions
+    """
+    graph_object = nx.DiGraph()
+    graph_object.add_nodes_from(node_data)
+    graph_object.add_edges_from(edge_data)
+    return graph_object
