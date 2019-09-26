@@ -79,3 +79,24 @@ def bitcoin_graph(node_data, edge_data):
     graph_object.add_nodes_from(node_data)
     graph_object.add_edges_from(edge_data)
     return graph_object
+
+
+def bitcoin_data_export(graph_data, type, filename):
+    """
+    export data in one of these formats:
+        edgelist
+        graphml
+        adjacencylist
+        adjacencymatrix
+    """
+    if type.lower() == 'edgelist':
+        nx.write_edgelist(graph_data, f'data/{filename}.edgelist')
+    elif type.lower() == 'graphml':
+        nx.write_graphml(graph_data, f'data/{filename}.graphml')
+    elif type.lower() == 'adjacencylist':
+        nx.write_adjlist(graph_data, f'data/{filename}.adjlist')
+    elif type.lower() == 'adjacencymatrix':
+        dataframe = nx.convert_matrix.to_pandas_adjacency(graph_data)
+        dataframe.to_csv(f'data/{filename}.csv')
+    else:
+        'Please enter one of the following options: edgelist; graphml; adjacencylist, adjacencymatrix.'
