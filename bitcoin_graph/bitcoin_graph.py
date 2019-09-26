@@ -53,3 +53,18 @@ def bitcoin_data(address):
                                                  }
                                                 ]))
     return transaction_pairs
+
+def bitcoin_network(node_data):
+    """
+    Iterate over node addresses
+    Download transactions for addresses
+    generate edge list for network
+    """
+    network_data = []
+    for i in node_data:
+        network_data.append(bitcoin_data(i[0]))
+    network_data_combine = []
+    for i in network_data:
+        for j in i:
+            network_data_combine.append(j)
+    return network_data_combine
