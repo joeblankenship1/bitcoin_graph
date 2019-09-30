@@ -1,31 +1,28 @@
 import unittest
-
+import bitcoin_graph
 
 class TestBitcoinGraph:
 
     def test_timestamp_conv():
-        pass
+        data = ''
+        timestamp = bitcoin_graph.timestamp_conv(data)
+        # assert timestamp == ''
+        # ValueError 
 
     def test_bitcoin_data():
-        pass
+        data = []
+        bitcoin_trans = bitcoin_graph.bitcoin_data(data)
+        # assert bitcoin_trans == []
+        # Error
 
     def test_bitcoin_network():
-        """
-
-        """
         pass
 
     def test_bitcoin_graph():
-        """
-
-        """
         pass
 
     def test_bitcoin_data_export():
-        """
-        Need to make sure the exceptions are set each export with
-        corresponding export error
-        """
+        # TODO: Need to make sure the exceptions are set each export with corresponding export error
         pass
 
 
