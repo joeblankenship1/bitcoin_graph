@@ -1,0 +1,5 @@
+blockchain==1.4.4
+decorator==4.4.0
+enum-compat==0.0.2
+future==0.17.1
+networkx==2.3
