@@ -10,7 +10,7 @@ __license__ = "GPL3"
 
 
 from datetime import datetime
-import network as nx
+import networkx as nx
 from blockchain import blockexplorer as bce
 
 # TODO: build feature for offline import for data - need data format standards from JSON
