@@ -1,11 +1,12 @@
 import unittest
-import bitcoin_graph
+from bitcoin_graph.bitcoin_graph import *
+
 
 class TestBitcoinGraph(unittest.TestCase):
 
     def test_timestamp_conv(self):
         data = 1570418869
-        self.assertEqual(bitcoin_graph.timestamp(data), '2019-10-07 03:27:49', 'Should be 2019-10-07 03:27:49')
+        self.assertEqual(timestamp_conv(data), '2019-10-07 03:27:49', "Should be 2019-10-07 03:27:49")
 
     '''
     def test_bitcoin_data():
