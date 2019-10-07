@@ -10,10 +10,7 @@ class TestBitcoinGraph(unittest.TestCase):
 
     '''
     def test_bitcoin_data():
-        data = []
-        bitcoin_trans = bitcoin_graph.bitcoin_data(data)
-        # assert bitcoin_trans == []
-        # Error
+        pass
 
     def test_bitcoin_network():
         pass
@@ -21,8 +18,16 @@ class TestBitcoinGraph(unittest.TestCase):
     def test_bitcoin_graph():
         pass
 
-    def test_bitcoin_data_export():
-        # TODO: Need to make sure the exceptions are set each export with corresponding export error
+    def test_bitcoin_data_export_edgelist():
+        pass
+
+    def test_bitcoin_data_export_graphml():
+        pass
+
+    def test_bitcoin_data_export_adjlist():
+        pass
+
+    def test_bitcoin_data_export_csv():
         pass
     '''
 
