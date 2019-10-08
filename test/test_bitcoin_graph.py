@@ -7,6 +7,8 @@ from bitcoin_graph.bitcoin_graph import *
 
 class TestBitcoinGraph(unittest.TestCase):
 
+    # TODO: Need to remove/delete tempfiles for export tests
+
     def test_timestamp_conv(self):
         data = 1570418869
         self.assertEqual(timestamp_conv(data), '2019-10-07 03:27:49', "Should be 2019-10-07 03:27:49")
@@ -63,6 +65,7 @@ class TestBitcoinGraph(unittest.TestCase):
         self.assertEqual(md5_hash.hexdigest(), expected_hash, f"Should be {expected_hash}")
 
     def test_bitcoin_data_export_adjlist(self):
+        # TODO: hash output is inconsistent; need to examine adjlist output
         expected_hash = '569d25ec97fdeaeff676aa2131e436e9'
         node_data = [('1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', {'name': 'Near Genesis'})]
         edge_data = bitcoin_network(node_data)
@@ -85,12 +88,6 @@ class TestBitcoinGraph(unittest.TestCase):
             for chunk in iter(lambda: f.read(4098), b""):
                 md5_hash.update(chunk)
         self.assertEqual(md5_hash.hexdigest(), expected_hash, f"Should be {expected_hash}")
-
-    def remove_test_tempfiles(self):
-        os.remove("test.edgelist")
-        os.remove("test.csv")
-        os.remove("test.adjlist")
-        os.remove("test.graphml")
 
 
 if __name__ == "__main__":
