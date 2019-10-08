@@ -1,5 +1,6 @@
 import unittest
 import hashlib
+import os
 from bitcoin_graph.bitcoin_graph import *
 
 
@@ -61,6 +62,12 @@ class TestBitcoinGraph(unittest.TestCase):
         expected_hash = 'e82afed32d1ef7772e371bddc810b1c1'
         pass
     '''
+
+    def remove_test_tempfiles(self):
+        os.remove("test.edgelist")
+        os.remove("test.csv")
+        os.remove("test.adjlist")
+        os.remove("test.graphml")
 
 
 if __name__ == "__main__":
