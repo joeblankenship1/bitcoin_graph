@@ -1,5 +1,15 @@
 blockchain==1.4.4
 decorator==4.4.0
+entrypoints==0.3
 enum-compat==0.0.2
+flake8==3.7.8
 future==0.17.1
+mccabe==0.6.1
 networkx==2.3
+numpy==1.17.2
+pandas==0.25.1
+pycodestyle==2.5.0
+pyflakes==2.1.1
+python-dateutil==2.8.0
+pytz==2019.3
+six==1.12.0
