@@ -28,10 +28,14 @@ class TestBitcoinGraph(unittest.TestCase):
         self.assertIn(bitcoin_network(data)[0][2]["time"], '2019-10-07 06:27:39', "Should contain 2019-10-07 06:27:39")
         self.assertIn(bitcoin_network(data)[0][2]["relay"], '127.0.0.1', "Should contain 127.0.0.1")
 
-    '''
-    def test_bitcoin_graph():
-        pass
+    def test_bitcoin_graph(self):
+        node_data = [('1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', {'name': 'Near Genesis'})]
+        edge_data = bitcoin_network(node_data)
+        graph_data = bitcoin_graph(node_data, edge_data)
+        self.assertIn(list(graph_data.nodes)[0], '1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', "Should contain 1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426")
+        self.assertIn(list(graph_data.edges)[0][0], '1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', "Should contain 1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426")
 
+    '''
     def test_bitcoin_data_export_edgelist():
         pass
 
