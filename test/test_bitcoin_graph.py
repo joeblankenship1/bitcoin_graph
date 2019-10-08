@@ -49,11 +49,19 @@ class TestBitcoinGraph(unittest.TestCase):
                 md5_hash.update(chunk)
         self.assertEqual(md5_hash.hexdigest(), expected_hash, f"Should be {expected_hash}")
 
-    '''
-    def test_bitcoin_data_export_graphml():
+    def test_bitcoin_data_export_graphml(self):
         expected_hash = '4fedad68b59a7c37105a2b54385782e8'
-        pass
+        node_data = [('1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', {'name': 'Near Genesis'})]
+        edge_data = bitcoin_network(node_data)
+        graph_data = bitcoin_graph(node_data, edge_data)
+        bitcoin_data_export(graph_data, 'graphml', 'test')
+        md5_hash = hashlib.md5()
+        with open('test.graphml', "rb") as f:
+            for chunk in iter(lambda: f.read(4098), b""):
+                md5_hash.update(chunk)
+        self.assertEqual(md5_hash.hexdigest(), expected_hash, f"Should be {expected_hash}")
 
+    '''
     def test_bitcoin_data_export_adjlist():
         expected_hash = '569d25ec97fdeaeff676aa2131e436e9'
         pass
