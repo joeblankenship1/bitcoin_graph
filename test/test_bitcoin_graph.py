@@ -1,4 +1,5 @@
 import unittest
+import hashlib
 from bitcoin_graph.bitcoin_graph import *
 
 
@@ -35,17 +36,29 @@ class TestBitcoinGraph(unittest.TestCase):
         self.assertIn(list(graph_data.nodes)[0], '1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', "Should contain 1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426")
         self.assertIn(list(graph_data.edges)[0][0], '1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', "Should contain 1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426")
 
-    '''
-    def test_bitcoin_data_export_edgelist():
-        pass
+    def test_bitcoin_data_export_edgelist(self):
+        expected_hash = 'a5d9bca17ae7a76e31daea9d984936ee'
+        node_data = [('1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', {'name': 'Near Genesis'})]
+        edge_data = bitcoin_network(node_data)
+        graph_data = bitcoin_graph(node_data, edge_data)
+        bitcoin_data_export(graph_data, 'edgelist', 'test')
+        md5_hash = hashlib.md5()
+        with open('test.edgelist', "rb") as f:
+            for chunk in iter(lambda: f.read(4098), b""):
+                md5_hash.update(chunk)
+        self.assertEqual(md5_hash.hexdigest(), expected_hash, f"Should be {expected_hash}")
 
+    '''
     def test_bitcoin_data_export_graphml():
+        expected_hash = '4fedad68b59a7c37105a2b54385782e8'
         pass
 
     def test_bitcoin_data_export_adjlist():
+        expected_hash = '569d25ec97fdeaeff676aa2131e436e9'
         pass
 
     def test_bitcoin_data_export_csv():
+        expected_hash = 'e82afed32d1ef7772e371bddc810b1c1'
         pass
     '''
 
