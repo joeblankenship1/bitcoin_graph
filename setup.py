@@ -16,7 +16,7 @@ setup(
     author_email="joe@cgrii.org",
     license="GPL-3.0",
     classifiers=[
-        "License :: OSI Approved :: GPL-3.0 License",
+        "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7"
     ],
