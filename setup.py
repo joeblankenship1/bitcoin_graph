@@ -25,7 +25,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        "blockchain",
-        "networkx"
+        "blockchain==1.4.4",
+        "networkx==2.3"
     ],
 )
