@@ -4,7 +4,7 @@ The `bitcoin_graph` library makes it simple to produce graphs and matrices of Bi
 
 ## Example
 
-    import bitcoin_graph
+    from bitcoin_graph import bitcoin_graph
 
     # you can input a single wallet address or a list of dictionaries with metadata
     node_data = [('1DqeUNa3wqJRamTEUMTiUXHAQynQuLh426', {'name': 'Near Genesis'})]
