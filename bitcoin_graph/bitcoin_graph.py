@@ -105,8 +105,9 @@ def bitcoin_data_export(graph_data, type, filename):
     else:
         'Please enter one of the following options: edgelist; graphml; adjacencylist, adjacencymatrix.'
 
+
 # TODO: link to main() once CLI features complete
 if __name__ == "__main__":
     """ This is executed when run from the command line """
-    #main()
+    # main()
     print('This is currently in an importable state only and is not intended for direct use')
