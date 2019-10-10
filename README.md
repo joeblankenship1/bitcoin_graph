@@ -2,6 +2,8 @@
 
 The `bitcoin_graph` library makes it simple to produce graphs and matrices of Bitcoin transactions from a single wallet address of a list of wallet addresses.
 
+    This is an alpha release, so please post bugs/requests as you encounter them. Thanks!
+
 ## Example
 
     from bitcoin_graph import bitcoin_graph
