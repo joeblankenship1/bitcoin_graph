@@ -4,6 +4,14 @@ The `bitcoin_graph` library makes it simple to produce graphs and matrices of Bi
 
     This is an alpha release, so please post bugs/requests as you encounter them. Thanks!
 
+## Installation
+
+    # via pip
+    pip install bitcoin_graph
+
+    # via github
+    pip install git+https://github.com/joeblankenship1/bitcoin_graph.git
+
 ## Example
 
     from bitcoin_graph import bitcoin_graph
@@ -19,6 +27,8 @@ The `bitcoin_graph` library makes it simple to produce graphs and matrices of Bi
 
     # you can then export to one of several formats
     bitcoin_graph.bitcoin_data_export(graph_object, 'graphml', 'filename')
+
+* You can also now use [NetworkX](https://networkx.github.io/documentation/stable/) to manipulate the graph object.
 
 ## Features
 
